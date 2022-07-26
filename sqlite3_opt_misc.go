@@ -4,7 +4,12 @@
 package sqlite3
 
 /*
-#include "ext/series.c"
+#define SQLITE_CORE
+
+#include "sqlite3-binding.h"
+#include "sqlite3ext.h"
+
+#include "./ext/series.c"
 
 static int load_misc_extensions() {
 	return sqlite3_auto_extension((void *)sqlite3_series_init);
